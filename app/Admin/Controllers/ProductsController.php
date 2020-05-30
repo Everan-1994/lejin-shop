@@ -24,10 +24,11 @@ class ProductsController extends AdminController
             $grid->id->sortable();
             $grid->column('image', '商品图片')->image('', 100);
             $grid->column('title', '商品名称');
-            $grid->on_sale('已上架')->using(Product::$onSales)->dot([
-                0 => 'danger',
-                1 => 'success'
-            ]);
+            // $grid->on_sale('已上架')->using(Product::$onSales)->dot([
+            //     0 => 'danger',
+            //     1 => 'success'
+            // ]);
+            $grid->on_sale('已上架')->switch();
             $grid->price('价格');
             $grid->rating('评分');
             $grid->sold_count('销量');
@@ -83,7 +84,10 @@ class ProductsController extends AdminController
             // 创建一个富文本编辑器
             $form->editor('description', '商品描述')->rules('required');
             // 创建一组单选框
-            $form->radio('on_sale', '上架')->options(Product::$onSales)->default(Product::ON_SALE_0);
+            // $form->radio('on_sale', '上架')->options(Product::$onSales)->default(Product::ON_SALE_0);
+            $form->switch('on_sale', '上架')->saving(function ($v) {
+                return $v ? Product::ON_SALE_1 : Product::ON_SALE_0;
+            });
             // 直接添加一对多的关联模型
             $form->hasMany('skus', 'SKU 列表', function (Form\NestedForm $form) {
                 $form->text('title', 'SKU 名称')->rules('required');
