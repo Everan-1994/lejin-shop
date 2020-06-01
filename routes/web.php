@@ -16,8 +16,12 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('user_addresses/{user_address}', 'UserAddressesController@edit')->name('user_addresses.edit');
     Route::put('user_addresses/{user_address}', 'UserAddressesController@update')->name('user_addresses.update');
     Route::delete('user_addresses/{user_address}', 'UserAddressesController@destroy')->name('user_addresses.destroy');
-
+    // 收藏
     Route::post('products/{product}/favorite', 'ProductsController@favor')->name('products.favor');
     Route::delete('products/{product}/favorite', 'ProductsController@disfavor')->name('products.disfavor');
     Route::get('products/favorites', 'ProductsController@favorites')->name('products.favorites');
+    // 购物车
+    Route::get('cart', 'CartController@index')->name('cart.index');
+    Route::post('cart', 'CartController@add')->name('cart.add');
+    Route::delete('cart/{sku}', 'CartController@remove')->name('cart.remove');
 });
