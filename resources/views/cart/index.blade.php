@@ -63,7 +63,8 @@
                                 <div class="col-sm-9 col-md-7">
                                     <select class="form-control" name="address">
                                         @foreach($addresses as $address)
-                                            <option value="{{ $address->id }}">{{ $address->full_address }} {{ $address->contact_name }} {{ $address->contact_phone }}</option>
+                                            <option
+                                                value="{{ $address->id }}">{{ $address->full_address }} {{ $address->contact_name }} {{ $address->contact_phone }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -114,13 +115,13 @@
                     });
             });
             // 监听 全选/取消全选 单选框的变更事件
-            $('#select-all').change(function() {
+            $('#select-all').change(function () {
                 // 获取单选框的选中状态
                 // prop() 方法可以知道标签中是否包含某个属性，当单选框被勾选时，对应的标签就会新增一个 checked 的属性
                 var checked = $(this).prop('checked');
                 // 获取所有 name=select 并且不带有 disabled 属性的勾选框
                 // 对于已经下架的商品我们不希望对应的勾选框会被选中，因此我们需要加上 :not([disabled]) 这个条件
-                $('input[name=select][type=checkbox]:not([disabled])').each(function() {
+                $('input[name=select][type=checkbox]:not([disabled])').each(function () {
                     // 将其勾选状态设为与目标单选框一致
                     $(this).prop('checked', checked);
                 });
@@ -155,14 +156,17 @@
                 });
                 axios.post('{{ route('orders.store') }}', req)
                     .then(function (response) {
-                        swal('订单提交成功', '', 'success');
+                        swal('订单提交成功', '', 'success')
+                            .then(() => {
+                                location.href = '/orders/' + response.data.id;
+                            });
                     }, function (error) {
                         if (error.response.status === 422) {
                             // http 状态码为 422 代表用户输入校验失败
                             var html = '<div>';
                             _.each(error.response.data.errors, function (errors) {
                                 _.each(errors, function (error) {
-                                    html += error+'<br>';
+                                    html += error + '<br>';
                                 })
                             });
                             html += '</div>';
