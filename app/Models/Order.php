@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Dcat\Admin\Traits\HasDateTimeFormatter;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use HasDateTimeFormatter;
+
     const REFUND_STATUS_PENDING = 'pending';
     const REFUND_STATUS_APPLIED = 'applied';
     const REFUND_STATUS_PROCESSING = 'processing';

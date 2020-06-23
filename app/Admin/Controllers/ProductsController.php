@@ -3,13 +3,10 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Product;
-use Dcat\Admin\Admin;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
-use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Show;
 use Dcat\Admin\Controllers\AdminController;
-use Illuminate\Support\Facades\Log;
 
 class ProductsController extends AdminController
 {
@@ -38,6 +35,7 @@ class ProductsController extends AdminController
                 $actions->disableView();
                 $actions->disableDelete();
             });
+
             $grid->tools(function ($tools) {
                 // 禁用批量删除按钮
                 $tools->batch(function ($batch) {
