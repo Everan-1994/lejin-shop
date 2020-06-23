@@ -80,7 +80,8 @@ class ProductsController extends AdminController
             // 创建一个选择图片的框
             $form->image('image', '封面图片')->rules('required|image');
             // 创建一个富文本编辑器
-            $form->editor('description', '商品描述')->rules('required');
+            // $form->editor('description', '商品描述')->rules('required');
+            $form->UEditor('description', '商品描述');
             // 创建一组单选框
             // $form->radio('on_sale', '上架')->options(Product::$onSales)->default(Product::ON_SALE_0);
             $form->switch('on_sale', '上架')->saving(function ($v) {

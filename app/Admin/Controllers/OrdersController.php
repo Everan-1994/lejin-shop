@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Models\Order;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
+use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Show;
 use Dcat\Admin\Controllers\AdminController;
 
@@ -48,33 +49,15 @@ class OrdersController extends AdminController
     }
 
     /**
-     * Make a show builder.
-     *
      * @param mixed $id
-     *
-     * @return Show
+     * @param Content $content
+     * @return Content
      */
-    protected function detail($id)
+    public function show($id, Content $content)
     {
-        return Show::make($id, new Order(), function (Show $show) {
-            $show->id;
-            $show->no;
-            $show->user_id;
-            $show->address;
-            $show->total_amount;
-            $show->remark;
-            $show->paid_at;
-            $show->payment_method;
-            $show->payment_no;
-            $show->refund_status;
-            $show->refund_no;
-            $show->closed;
-            $show->reviewed;
-            $show->ship_status;
-            $show->ship_data;
-            $show->extra;
-            $show->created_at;
-            $show->updated_at;
-        });
+        return $content
+            ->header('查看订单')
+            // body 方法可以接受 Laravel 的视图作为参数
+            ->body(view('admin.orders.show', ['order' => Order::find($id)]));
     }
 }

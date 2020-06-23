@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2.5",
         "dcat/laravel-admin": "^1.4",
+        "everan/ueditor": "dev-master",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",

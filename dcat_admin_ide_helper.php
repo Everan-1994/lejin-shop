@@ -43,24 +43,15 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection sold_count
      * @property Grid\Column|Collection review_count
      * @property Grid\Column|Collection no
-     * @property Grid\Column|Collection user_id
-     * @property Grid\Column|Collection address
      * @property Grid\Column|Collection total_amount
-     * @property Grid\Column|Collection remark
      * @property Grid\Column|Collection paid_at
-     * @property Grid\Column|Collection payment_method
-     * @property Grid\Column|Collection payment_no
-     * @property Grid\Column|Collection refund_status
-     * @property Grid\Column|Collection refund_no
-     * @property Grid\Column|Collection closed
-     * @property Grid\Column|Collection reviewed
      * @property Grid\Column|Collection ship_status
-     * @property Grid\Column|Collection ship_data
-     * @property Grid\Column|Collection extra
+     * @property Grid\Column|Collection refund_status
      * @property Grid\Column|Collection parent_id
      * @property Grid\Column|Collection order
      * @property Grid\Column|Collection icon
      * @property Grid\Column|Collection uri
+     * @property Grid\Column|Collection user_id
      * @property Grid\Column|Collection permission_id
      * @property Grid\Column|Collection menu_id
      * @property Grid\Column|Collection http_method
@@ -77,6 +68,15 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection product_id
      * @property Grid\Column|Collection review
      * @property Grid\Column|Collection reviewed_at
+     * @property Grid\Column|Collection address
+     * @property Grid\Column|Collection remark
+     * @property Grid\Column|Collection payment_method
+     * @property Grid\Column|Collection payment_no
+     * @property Grid\Column|Collection refund_no
+     * @property Grid\Column|Collection closed
+     * @property Grid\Column|Collection reviewed
+     * @property Grid\Column|Collection ship_data
+     * @property Grid\Column|Collection extra
      * @property Grid\Column|Collection token
      * @property Grid\Column|Collection stock
      * @property Grid\Column|Collection image
@@ -120,24 +120,15 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection sold_count(string $label = null)
      * @method Grid\Column|Collection review_count(string $label = null)
      * @method Grid\Column|Collection no(string $label = null)
-     * @method Grid\Column|Collection user_id(string $label = null)
-     * @method Grid\Column|Collection address(string $label = null)
      * @method Grid\Column|Collection total_amount(string $label = null)
-     * @method Grid\Column|Collection remark(string $label = null)
      * @method Grid\Column|Collection paid_at(string $label = null)
-     * @method Grid\Column|Collection payment_method(string $label = null)
-     * @method Grid\Column|Collection payment_no(string $label = null)
-     * @method Grid\Column|Collection refund_status(string $label = null)
-     * @method Grid\Column|Collection refund_no(string $label = null)
-     * @method Grid\Column|Collection closed(string $label = null)
-     * @method Grid\Column|Collection reviewed(string $label = null)
      * @method Grid\Column|Collection ship_status(string $label = null)
-     * @method Grid\Column|Collection ship_data(string $label = null)
-     * @method Grid\Column|Collection extra(string $label = null)
+     * @method Grid\Column|Collection refund_status(string $label = null)
      * @method Grid\Column|Collection parent_id(string $label = null)
      * @method Grid\Column|Collection order(string $label = null)
      * @method Grid\Column|Collection icon(string $label = null)
      * @method Grid\Column|Collection uri(string $label = null)
+     * @method Grid\Column|Collection user_id(string $label = null)
      * @method Grid\Column|Collection permission_id(string $label = null)
      * @method Grid\Column|Collection menu_id(string $label = null)
      * @method Grid\Column|Collection http_method(string $label = null)
@@ -154,6 +145,15 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection product_id(string $label = null)
      * @method Grid\Column|Collection review(string $label = null)
      * @method Grid\Column|Collection reviewed_at(string $label = null)
+     * @method Grid\Column|Collection address(string $label = null)
+     * @method Grid\Column|Collection remark(string $label = null)
+     * @method Grid\Column|Collection payment_method(string $label = null)
+     * @method Grid\Column|Collection payment_no(string $label = null)
+     * @method Grid\Column|Collection refund_no(string $label = null)
+     * @method Grid\Column|Collection closed(string $label = null)
+     * @method Grid\Column|Collection reviewed(string $label = null)
+     * @method Grid\Column|Collection ship_data(string $label = null)
+     * @method Grid\Column|Collection extra(string $label = null)
      * @method Grid\Column|Collection token(string $label = null)
      * @method Grid\Column|Collection stock(string $label = null)
      * @method Grid\Column|Collection image(string $label = null)
@@ -202,24 +202,15 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection sold_count
      * @property Show\Field|Collection review_count
      * @property Show\Field|Collection no
-     * @property Show\Field|Collection user_id
-     * @property Show\Field|Collection address
      * @property Show\Field|Collection total_amount
-     * @property Show\Field|Collection remark
      * @property Show\Field|Collection paid_at
-     * @property Show\Field|Collection payment_method
-     * @property Show\Field|Collection payment_no
-     * @property Show\Field|Collection refund_status
-     * @property Show\Field|Collection refund_no
-     * @property Show\Field|Collection closed
-     * @property Show\Field|Collection reviewed
      * @property Show\Field|Collection ship_status
-     * @property Show\Field|Collection ship_data
-     * @property Show\Field|Collection extra
+     * @property Show\Field|Collection refund_status
      * @property Show\Field|Collection parent_id
      * @property Show\Field|Collection order
      * @property Show\Field|Collection icon
      * @property Show\Field|Collection uri
+     * @property Show\Field|Collection user_id
      * @property Show\Field|Collection permission_id
      * @property Show\Field|Collection menu_id
      * @property Show\Field|Collection http_method
@@ -236,6 +227,15 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection product_id
      * @property Show\Field|Collection review
      * @property Show\Field|Collection reviewed_at
+     * @property Show\Field|Collection address
+     * @property Show\Field|Collection remark
+     * @property Show\Field|Collection payment_method
+     * @property Show\Field|Collection payment_no
+     * @property Show\Field|Collection refund_no
+     * @property Show\Field|Collection closed
+     * @property Show\Field|Collection reviewed
+     * @property Show\Field|Collection ship_data
+     * @property Show\Field|Collection extra
      * @property Show\Field|Collection token
      * @property Show\Field|Collection stock
      * @property Show\Field|Collection image
@@ -279,24 +279,15 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection sold_count(string $label = null)
      * @method Show\Field|Collection review_count(string $label = null)
      * @method Show\Field|Collection no(string $label = null)
-     * @method Show\Field|Collection user_id(string $label = null)
-     * @method Show\Field|Collection address(string $label = null)
      * @method Show\Field|Collection total_amount(string $label = null)
-     * @method Show\Field|Collection remark(string $label = null)
      * @method Show\Field|Collection paid_at(string $label = null)
-     * @method Show\Field|Collection payment_method(string $label = null)
-     * @method Show\Field|Collection payment_no(string $label = null)
-     * @method Show\Field|Collection refund_status(string $label = null)
-     * @method Show\Field|Collection refund_no(string $label = null)
-     * @method Show\Field|Collection closed(string $label = null)
-     * @method Show\Field|Collection reviewed(string $label = null)
      * @method Show\Field|Collection ship_status(string $label = null)
-     * @method Show\Field|Collection ship_data(string $label = null)
-     * @method Show\Field|Collection extra(string $label = null)
+     * @method Show\Field|Collection refund_status(string $label = null)
      * @method Show\Field|Collection parent_id(string $label = null)
      * @method Show\Field|Collection order(string $label = null)
      * @method Show\Field|Collection icon(string $label = null)
      * @method Show\Field|Collection uri(string $label = null)
+     * @method Show\Field|Collection user_id(string $label = null)
      * @method Show\Field|Collection permission_id(string $label = null)
      * @method Show\Field|Collection menu_id(string $label = null)
      * @method Show\Field|Collection http_method(string $label = null)
@@ -313,6 +304,15 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection product_id(string $label = null)
      * @method Show\Field|Collection review(string $label = null)
      * @method Show\Field|Collection reviewed_at(string $label = null)
+     * @method Show\Field|Collection address(string $label = null)
+     * @method Show\Field|Collection remark(string $label = null)
+     * @method Show\Field|Collection payment_method(string $label = null)
+     * @method Show\Field|Collection payment_no(string $label = null)
+     * @method Show\Field|Collection refund_no(string $label = null)
+     * @method Show\Field|Collection closed(string $label = null)
+     * @method Show\Field|Collection reviewed(string $label = null)
+     * @method Show\Field|Collection ship_data(string $label = null)
+     * @method Show\Field|Collection extra(string $label = null)
      * @method Show\Field|Collection token(string $label = null)
      * @method Show\Field|Collection stock(string $label = null)
      * @method Show\Field|Collection image(string $label = null)
@@ -328,6 +328,7 @@ namespace Dcat\Admin {
 
     /**
      * @method \Dcat\Admin\Form\Field\Button button(...$params)
+     * @method \Dcat\Admin\Extension\UEditor\Form\UEditor UEditor(...$params)
      */
     class Form {}
 
