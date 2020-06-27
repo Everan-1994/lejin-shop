@@ -81,7 +81,7 @@ class OrdersController extends AdminController
         if ($order->ship_status !== Order::SHIP_STATUS_PENDING) {
             throw new InvalidRequestException('该订单已发货');
         }
-        // Laravel 5.5 之后 validate 方法可以返回校验过的值
+        
         $validator = Validator::make($request->all(), [
             'express_company' => ['required'],
             'express_no' => ['required'],
