@@ -31,6 +31,9 @@ class ProductsController extends AdminController
             $grid->sold_count('销量');
             $grid->review_count('评论数');
 
+            $grid->model(new Product)->orderBy('order', 'desc');
+            $grid->order->orderable();
+
             $grid->actions(function ($actions) {
                 $actions->disableView();
                 $actions->disableDelete();

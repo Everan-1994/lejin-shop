@@ -4,12 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 
-class Product extends Model
+class Product extends Model implements Sortable
 {
+    use SortableTrait;
+
+    protected $sortable = [
+        // 设置排序字段名称
+        'order_column_name' => 'order',
+        // 是否在创建时自动排序，此参数建议设置为 true
+        'sort_when_creating' => true,
+    ];
+
     protected $fillable = [
         'title', 'description', 'image', 'on_sale',
-        'rating', 'sold_count', 'review_count', 'price'
+        'rating', 'sold_count', 'review_count', 'price', 'order'
     ];
 
     // protected $casts = [

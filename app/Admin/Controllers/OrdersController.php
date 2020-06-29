@@ -81,7 +81,7 @@ class OrdersController extends AdminController
         if ($order->ship_status !== Order::SHIP_STATUS_PENDING) {
             throw new InvalidRequestException('该订单已发货');
         }
-        
+
         $validator = Validator::make($request->all(), [
             'express_company' => ['required'],
             'express_no' => ['required'],
